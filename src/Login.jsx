@@ -7,10 +7,14 @@ const Login = ()=>{
     const [password,setPassword] = useState("Ayush@1243");
 
     const handleClick = async () =>{
-        const res = axios.post("http://localhost:3000/login",{
-            emailId,
-            password
-        })
+        const res = axios.post("http://localhost:3000/login",
+            {
+                emailId,
+                password
+            },{
+                withCredentials:true,
+            }
+        )
     }
     return(
         <div className="flex justify-center ">
